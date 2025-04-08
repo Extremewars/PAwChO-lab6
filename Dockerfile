@@ -22,7 +22,7 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 WORKDIR /app
 
 # Klonowanie repozytorium przez ssh (w nim zawarty jest plik main.go)
-RUN --mount=type=ssh git clone git@github.com:Extremewars/PAwChO-lab6.git .
+RUN --mount=type=ssh git clone git@github.com:Extremewars/PAwChO-lab6.git . && rm -rf zdjecia
 
 # Kompilacja aplikacji
 RUN go build -ldflags "-X main.version=${APP_VERSION}" -o main main.go
