@@ -34,13 +34,16 @@ WORKDIR /app
 
 RUN apk add --no-cache curl
 
+# Skopiowanie skompilowanej aplikacji do obrazu
 COPY --from=builder /app/main .
 
+# Skopiowanie pliku konfiguracyjnego Reverse Proxy
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
 HEALTHCHECK --interval=10s --timeout=3s --start-period=5s \
   CMD curl -f http://localhost/ || exit 1
-
+  
+# Uruchomienie najpierw aplikacji Go a potem silnik Nginx
 CMD ["/bin/sh", "-c", "/app/main & sleep 2 && nginx -g 'daemon off;'"]
