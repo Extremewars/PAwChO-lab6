@@ -41,24 +41,24 @@ docker tag <obraz> <nazwa_użytkownika_dockerhub>/<nazwa_obrazu>
 docker push <nazwa_użytkownika_dockerhub>/<nazwa_obrazu>
 ```
 
-# Screnny z wykonania
+# Screeny z wykonania
 
-Logowanie
+### Logowanie przez terminal do githuba poleceniem ```gh auth```
 
 ![Wypchnięcie obrazu przez ghcr.io](zdjecia/gh_auth_login.png)
 
-Tworzenie repozytorium
+### Tworzenie repozytorium poleceniem ```gh repo create```
 
 ![Strona pakietu na github](./zdjecia/gh_repo_create.png)
 
-Utworzone repozytorium
+### Utworzone repozytorium na githubie
 
 ![Wypchnięcie obrazu przez ghcr.io](./zdjecia/created_repository.png)
 
-Wypchnięcie obrazu jako pakiet ghcr.io
+### Wypchnięcie obrazu jako pakiet ghcr.io
 
 ![Wypchnięcie obrazu przez ghcr.io](./zdjecia/ghcrio_pushed.png)
 
-Strona pakietu na githubie
+### Strona utworzonego pakietu na githubie
 
 ![Strona pakietu na github](./zdjecia/created_package.png)
