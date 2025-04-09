@@ -1,7 +1,8 @@
 # PAwChO-lab6
 
 Obraz można pobrać poleceniami:
-- przez github (ghcr.io, obraz również jest podpięty jako pakiet do tego repozytorium) https://github.com/Extremewars/PAwChO-lab6/pkgs/container/lab6
+- przez github (ghcr.io, obraz również jest podpięty jako pakiet do tego repozytorium) \
+https://github.com/Extremewars/PAwChO-lab6/pkgs/container/lab6
 ```bash
 docker pull ghcr.io/extremewars/lab6:latest
 ```
