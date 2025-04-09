@@ -40,3 +40,25 @@ Analogicznie jak do docker hub:
 docker tag <obraz> <nazwa_użytkownika_dockerhub>/<nazwa_obrazu>
 docker push <nazwa_użytkownika_dockerhub>/<nazwa_obrazu>
 ```
+
+# Screnny z wykonania
+
+Logowanie
+
+![Wypchnięcie obrazu przez ghcr.io](zdjecia/gh_auth_login.png)
+
+Tworzenie repozytorium
+
+![Strona pakietu na github](./zdjecia/gh_repo_create.png)
+
+Utworzone repozytorium
+
+![Wypchnięcie obrazu przez ghcr.io](./zdjecia/created_repository.png)
+
+Wypchnięcie obrazu jako pakiet ghcr.io
+
+![Wypchnięcie obrazu przez ghcr.io](./zdjecia/ghcrio_pushed.png)
+
+Strona pakietu na githubie
+
+![Strona pakietu na github](./zdjecia/created_package.png)
