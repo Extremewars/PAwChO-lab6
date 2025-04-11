@@ -6,7 +6,7 @@ FROM alpine AS builder
 ARG APP_VERSION=1.22.2
 
 # Instalacja potrzebnych pakietów w tym klienta ssh i git
-RUN apk add --no-cache openssh-client git url tar gcc musl-dev
+RUN apk add --no-cache openssh-client git curl tar gcc musl-dev
 
 # Pobranie klucza publicznego z github.com
 RUN mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
@@ -34,16 +34,12 @@ WORKDIR /app
 
 RUN apk add --no-cache curl
 
-# Skopiowanie skompilowanej aplikacji do obrazu
 COPY --from=builder /app/main .
-
-# Skopiowanie pliku konfiguracyjnego Reverse Proxy
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
 
 HEALTHCHECK --interval=10s --timeout=3s --start-period=5s \
   CMD curl -f http://localhost/ || exit 1
-  
-# Uruchomienie najpierw aplikacji Go a potem silnik Nginx
+
 CMD ["/bin/sh", "-c", "/app/main & sleep 2 && nginx -g 'daemon off;'"]
